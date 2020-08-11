@@ -1,0 +1,51 @@
+---
+- hosts: hosts
+
+  tasks:
+  - name: Enable EPEL Repository on CentOS 8
+    dnf:
+     name: epel-release
+     state: latest
+    become: True
+
+  - name: instalacion de paquete de postfix
+    package:
+     name: postfix
+     state: present
+    become: yes
+
+  - name: instalacion de paquete de dovecot
+    yum:
+     name: dovecot
+     state: present
+    become: yes
+
+  - name: instalacion de paquete de httpd
+    yum:
+     name: httpd
+     state: present
+    become: yes
+
+  - name: instalacion de paquete de squirrelmail
+    yum:
+     name: squirrelmail
+     state: present
+    become: yes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
